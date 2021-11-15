@@ -1,2 +1,3 @@
 discord
+jinja2
 python-dotenv
