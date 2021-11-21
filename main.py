@@ -48,6 +48,8 @@ async def post(ctx):
         contents.pop(-1)
         file_name = datetime.datetime.now().strftime('%Y-%m-%d') + "_{}.md".format(title)
         repo = git.Repo(settings.HUGO_DIR)
+        origin = repo.remote(name='origin')
+        origin.pull()
         with open(settings.HUGO_DIR + "/content/posts/" + file_name, "w", encoding="utf-8") as f:
             write_md(contents, title, date, f)
         repo.git.add(settings.HUGO_DIR + "/content/posts/" + file_name)
