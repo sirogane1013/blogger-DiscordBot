@@ -26,7 +26,7 @@ async def new(ctx: commands.context, title: str = None, category: str = None, *t
     if title is None:
         title = datetime.datetime.now().strftime('%Y年%m月%d日')
     if category is None:
-        category = "雑記"
+        category = "日記"
     tags = set(tags)
     await ctx.send(
         "------------------\n" +
