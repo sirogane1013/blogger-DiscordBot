@@ -71,9 +71,9 @@ def extract_meta(message: str):
     date = re.findall('date = (.*)', message)
     category = re.findall('category = (.*)', message)
     tags = re.findall('tags = (.*)', message)
-    if tags == ""
+    if tags == "":
         tags_list = []
-    else
+    else:
         tags_list = tags[0].split(', ')
     return title[0], date[0], category[0], tags_list
 
